@@ -4,28 +4,30 @@
              xmlns:local="clr-namespace:Chapter3"
              x:Class="Chapter3.MainPage">
 
-    <StackLayout Orientation="Vertical"
-                 Padding="20"
-                 Spacing="30">
-        <!-- Place new controls here -->
-        <Label Text="1" 
-               BackgroundColor="Yellow"/>
-        <Label Text="2" 
-               BackgroundColor="Yellow" />
-        <Label Text="3" 
-               BackgroundColor="Yellow"/>
-        <StackLayout Orientation="Horizontal"
-                     BackgroundColor="LightGray"
-                     Padding="10"
-                     HorizontalOptions="Fill"
-                     VerticalOptions="CenterAndExpand">
-            <Label Text="4" 
-               BackgroundColor="Yellow"/>
-            <Label Text="5" 
-               BackgroundColor="Yellow" />
-            <Label Text="6" 
-               BackgroundColor="Yellow"/>
+    <Frame OutlineColor="Blue">
+        <StackLayout Orientation="Vertical"
+                     Padding="20"
+                     Spacing="30">
+            <!-- Place new controls here -->
+            <Label Text="1" 
+                   BackgroundColor="Yellow"/>
+            <Label Text="2" 
+                   BackgroundColor="Yellow" />
+            <Label Text="3" 
+                   BackgroundColor="Yellow"/>
+            <StackLayout Orientation="Horizontal"
+                         BackgroundColor="LightGray"
+                         Padding="10"
+                         HorizontalOptions="Fill"
+                         VerticalOptions="CenterAndExpand">
+                <Label Text="4" 
+                   BackgroundColor="Yellow"/>
+                <Label Text="5" 
+                   BackgroundColor="Yellow" />
+                <Label Text="6" 
+                   BackgroundColor="Yellow"/>
+            </StackLayout>
         </StackLayout>
-    </StackLayout>
+    </Frame>
 
 </ContentPage>

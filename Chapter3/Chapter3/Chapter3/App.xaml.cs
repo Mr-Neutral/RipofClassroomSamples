@@ -11,7 +11,7 @@ namespace Chapter3
         {
             InitializeComponent();
 
-            MainPage = new GridPage();
+            MainPage = new MainPage();
         }
 
         protected override void OnStart()
