@@ -36,7 +36,14 @@ namespace Chapter3
             grid.Children.Add(new Label { Text = "Cell 2, 2" }, 1, 1);
             grid.Children.Add(new Label { Text = "Cell 2, 3" }, 2, 1);
 
-            Content = grid;
+            Content = new StackLayout
+            { Children =
+                {
+                    new CustomContentView(),
+                    grid
+                }
+            }
+            ;
         }
 	}
 }

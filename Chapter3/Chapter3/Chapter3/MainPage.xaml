@@ -8,6 +8,7 @@
         <StackLayout Orientation="Vertical"
                      Padding="20"
                      Spacing="30">
+            <local:CustomContentView />
             <!-- Place new controls here -->
             <Label Text="1" 
                    BackgroundColor="Yellow"/>
