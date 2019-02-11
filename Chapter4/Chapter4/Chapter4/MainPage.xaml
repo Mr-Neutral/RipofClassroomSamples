@@ -26,6 +26,10 @@
                     DateSelected="DatePicker_DateSelected"
                     />
 
+        <TimePicker x:Name="theTimePicker"
+                    Format="T"
+                    PropertyChanged="TheTimePicker_PropertyChanged" />
+
         <Button Text="Submit"
                 Clicked="Button_Clicked" />
     </StackLayout>

@@ -36,5 +36,18 @@ namespace Chapter4
                          $"Old date was {e.OldDate.ToShortDateString()} new date is {e.NewDate.ToShortDateString()}",
                          "Ok");
         }
+
+        private void TheTimePicker_PropertyChanged(object sender,
+            System.ComponentModel.PropertyChangedEventArgs e)
+        {
+            // This method fires when any property changes
+            // so we need to filter the property we listen to on just Time
+            if (e.PropertyName == TimePicker.TimeProperty.PropertyName)
+            {
+                DisplayAlert("Time Changed",
+                             $"Time is {theTimePicker.Time}",
+                             "Ok");
+            }
+        }
     }
 }
