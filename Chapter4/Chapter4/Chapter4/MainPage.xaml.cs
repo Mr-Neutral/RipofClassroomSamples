@@ -58,5 +58,10 @@ namespace Chapter4
 
             theStepperLabel.Text = e.NewValue.ToString();
         }
+
+        private void TheSlider_ValueChanged(object sender, ValueChangedEventArgs e)
+        {
+            theSliderLabel.Text = e.NewValue.ToString();
+        }
     }
 }

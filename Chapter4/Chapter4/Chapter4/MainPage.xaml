@@ -42,6 +42,14 @@
 
         </StackLayout>
 
+        <Slider x:Name="theSlider"
+                Value="42"
+                Minimum="-100"
+                Maximum="100"
+                ValueChanged="TheSlider_ValueChanged" />
+
+        <Label x:Name="theSliderLabel" Text="42" />
+
         <Button Text="Submit"
                 Clicked="Button_Clicked" />
     </StackLayout>
