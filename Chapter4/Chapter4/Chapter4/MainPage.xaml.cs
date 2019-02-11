@@ -13,5 +13,21 @@ namespace Chapter4
         {
             InitializeComponent();
         }
+
+        private void Picker_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var picker = sender as Picker;
+
+            DisplayAlert("Selected Value",
+                         picker.SelectedItem.ToString(),
+                         "Ok");
+        }
+
+        private void Button_Clicked(object sender, EventArgs e)
+        {
+            DisplayAlert("Selected Value",
+                         thePicker.SelectedItem?.ToString(),
+                         "Ok");
+        }
     }
 }
