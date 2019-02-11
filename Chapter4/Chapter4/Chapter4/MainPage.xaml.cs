@@ -49,5 +49,14 @@ namespace Chapter4
                              "Ok");
             }
         }
+
+        private void Stepper_ValueChanged(object sender, ValueChangedEventArgs e)
+        {
+            //DisplayAlert("Stepper Changed",
+            //             $"Old value was {e.OldValue} new value is {e.NewValue}",
+            //             "Ok");
+
+            theStepperLabel.Text = e.NewValue.ToString();
+        }
     }
 }

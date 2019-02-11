@@ -30,6 +30,18 @@
                     Format="T"
                     PropertyChanged="TheTimePicker_PropertyChanged" />
 
+        <StackLayout Orientation="Horizontal">
+            <Stepper x:Name="theStepper" 
+                 Value="5"
+                 Minimum="0"
+                 Maximum="50"
+                 Increment="5"
+                 ValueChanged="Stepper_ValueChanged" />
+
+            <Label x:Name="theStepperLabel" Text="5" />
+
+        </StackLayout>
+
         <Button Text="Submit"
                 Clicked="Button_Clicked" />
     </StackLayout>
