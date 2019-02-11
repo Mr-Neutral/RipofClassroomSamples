@@ -28,6 +28,9 @@ namespace Chapter4
             DisplayAlert("Butto Clicked",
                          thePicker.SelectedItem?.ToString(),
                          "Ok");
+
+            // Focus first name on button click
+            var value = firstName.Focus();
         }
 
         private void DatePicker_DateSelected(object sender, DateChangedEventArgs e)
@@ -62,6 +65,8 @@ namespace Chapter4
         private void TheSlider_ValueChanged(object sender, ValueChangedEventArgs e)
         {
             theSliderLabel.Text = e.NewValue.ToString();
+
+            submitButton.Opacity = e.NewValue;
         }
 
         private void Switch_Toggled(object sender, ToggledEventArgs e)

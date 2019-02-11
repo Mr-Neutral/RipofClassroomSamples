@@ -30,7 +30,7 @@
                     Format="T"
                     PropertyChanged="TheTimePicker_PropertyChanged" />
 
-        <StackLayout Orientation="Horizontal">
+        <StackLayout Orientation="Horizontal" IsVisible="False">
             <Stepper x:Name="theStepper" 
                  Value="5"
                  Minimum="0"
@@ -43,9 +43,9 @@
         </StackLayout>
 
         <Slider x:Name="theSlider"
-                Value="42"
-                Minimum="-100"
-                Maximum="100"
+                Value="1"
+                Minimum="0"
+                Maximum="1"
                 ValueChanged="TheSlider_ValueChanged" />
 
         <Label x:Name="theSliderLabel" Text="42" />
@@ -54,7 +54,15 @@
                 IsToggled="True"
                 Toggled="Switch_Toggled" />
 
-        <Button Text="Submit"
+        <Entry x:Name="firstName"
+               Placeholder="First Name"
+               IsEnabled="False"
+               Scale=".5"
+               />
+
+        <Button x:Name="submitButton"
+                Text="Submit"
+                Scale="2"
                 Clicked="Button_Clicked" />
     </StackLayout>
 
