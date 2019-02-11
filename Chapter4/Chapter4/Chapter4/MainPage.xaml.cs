@@ -63,5 +63,12 @@ namespace Chapter4
         {
             theSliderLabel.Text = e.NewValue.ToString();
         }
+
+        private void Switch_Toggled(object sender, ToggledEventArgs e)
+        {
+            DisplayAlert("Switch Toggled",
+                         $"Value is {e.Value}",
+                         "Ok");
+        }
     }
 }

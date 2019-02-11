@@ -50,6 +50,10 @@
 
         <Label x:Name="theSliderLabel" Text="42" />
 
+        <Switch x:Name="theSwitch"
+                IsToggled="True"
+                Toggled="Switch_Toggled" />
+
         <Button Text="Submit"
                 Clicked="Button_Clicked" />
     </StackLayout>
