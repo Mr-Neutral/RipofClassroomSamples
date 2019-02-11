@@ -19,6 +19,13 @@
             </Picker.Items>
         </Picker>
 
+        <DatePicker x:Name="theDatePicker"
+                    Format="D"
+                    MinimumDate="1/1/2001"
+                    MaximumDate="1/1/2020"
+                    DateSelected="DatePicker_DateSelected"
+                    />
+
         <Button Text="Submit"
                 Clicked="Button_Clicked" />
     </StackLayout>

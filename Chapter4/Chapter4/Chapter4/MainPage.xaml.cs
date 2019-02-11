@@ -25,8 +25,15 @@ namespace Chapter4
 
         private void Button_Clicked(object sender, EventArgs e)
         {
-            DisplayAlert("Selected Value",
+            DisplayAlert("Butto Clicked",
                          thePicker.SelectedItem?.ToString(),
+                         "Ok");
+        }
+
+        private void DatePicker_DateSelected(object sender, DateChangedEventArgs e)
+        {
+            DisplayAlert("Date Selected",
+                         $"Old date was {e.OldDate.ToShortDateString()} new date is {e.NewDate.ToShortDateString()}",
                          "Ok");
         }
     }
