@@ -10,12 +10,12 @@
            HorizontalOptions="Center" />
 
         <Picker x:Name="thePicker"
-                Title="Entree"
+                Title="Background Color"
                 SelectedIndexChanged="Picker_SelectedIndexChanged">
             <Picker.Items>
-                <x:String>Burger</x:String>
-                <x:String>BBQ Burger</x:String>
-                <x:String>Bacon Burger</x:String>
+                <x:String>FF0000</x:String>
+                <x:String>0000FF</x:String>
+                <x:String>00FF00</x:String>
             </Picker.Items>
         </Picker>
 

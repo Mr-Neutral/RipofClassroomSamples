@@ -18,9 +18,12 @@ namespace Chapter4
         {
             var picker = sender as Picker;
 
+
             DisplayAlert("Selected Value",
                          picker.SelectedItem.ToString(),
                          "Ok");
+
+            this.BackgroundColor = Color.FromHex(picker.SelectedItem.ToString());
         }
 
         private void Button_Clicked(object sender, EventArgs e)
