@@ -57,5 +57,15 @@ namespace Chapter5
         {
             simpleListView.SelectedItem = null;
         }
+
+        private void OnListViewRowButtonClicked(object sender, EventArgs e)
+        {
+            var button = (Button)sender;
+            var person = (Person)button.CommandParameter;
+
+            DisplayAlert("Button Clicked",
+                        $"{person.LastName}, {person.FirstName} button was clicked",
+                        "Ok");
+        }
     }
 }
