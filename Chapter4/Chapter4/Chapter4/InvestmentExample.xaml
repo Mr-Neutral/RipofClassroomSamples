@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Chapter4.InvestmentExample">
+    <ContentPage.Content>
+        <StackLayout>
+
+
+            <!--private double CalculateTotal(double initialInvestment,
+                              double monthlyInvestment,
+                              double numberOfYears,
+                              int compoundsPerYear,
+                              double interestRate)-->
+
+            <Entry x:Name="entryInitial" />
+            <Slider x:Name="monthlyInvestment"
+                    Minimum="0"
+                    Maximum="1000"
+                    ValueChanged="MonthlyInvestment_ValueChanged"
+                    />
+            <Label x:Name="monthlyInvestmentValue" />
+            <Stepper x:Name="numberOfYears" Value="20"
+                     ValueChanged="NumberOfYears_ValueChanged"/>
+            <Label x:Name="numberOfYearsValue" />
+            <Picker x:Name="compounds">
+                <Picker.Items>
+                    <x:String>Daily</x:String>
+                    <x:String>Monthly</x:String>
+                    <x:String>Yearly</x:String>
+                </Picker.Items>
+            </Picker>
+            <Slider x:Name="interestRate"
+                    Minimum="0"
+                    Maximum="15"
+                    ValueChanged="InterestRate_ValueChanged" />
+            <Label x:Name="interestRateValue" />
+
+            <Button Clicked="Button_Clicked"
+                    Text="Calculate" />
+
+            <Label x:Name="total" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

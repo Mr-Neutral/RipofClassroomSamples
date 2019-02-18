@@ -11,7 +11,7 @@ namespace Chapter4
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            MainPage = new InvestmentExample();
         }
 
         protected override void OnStart()
