@@ -7,7 +7,12 @@
     <StackLayout>
         <!-- Place new controls here -->
         <ListView x:Name="simpleListView"
-                  Margin="20"/>
+                  Margin="20"
+                  ItemTapped="SimpleListView_ItemTapped"
+                  ItemSelected="SimpleListView_ItemSelected"
+                  />
+        <Button Text="Clear Selection" 
+                Clicked="Button_Clicked" />
     </StackLayout>
 
 </ContentPage>
