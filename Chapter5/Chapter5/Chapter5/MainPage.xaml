@@ -8,15 +8,25 @@
         <!-- Place new controls here -->
         <ListView x:Name="simpleListView"
                   Margin="20"
+                  RowHeight="50"
+                  SeparatorColor="Black"
+                  SeparatorVisibility="Default"
                   ItemTapped="SimpleListView_ItemTapped"
                   ItemSelected="SimpleListView_ItemSelected">
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <ImageCell Text="{Binding FirstName}"
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="{Binding FirstName}" BackgroundColor="Beige" />
+                            <Label Text="{Binding LastName}" />
+                        </StackLayout>
+                    </ViewCell>
+                    
+                    <!--<ImageCell Text="{Binding FirstName}"
                                TextColor="Red"
                                Detail="{Binding LastName}"
                                DetailColor="Green"
-                               ImageSource="{Binding Picture}" />
+                               ImageSource="{Binding Picture}" />-->
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
