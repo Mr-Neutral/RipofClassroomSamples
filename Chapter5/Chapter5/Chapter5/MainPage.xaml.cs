@@ -67,5 +67,15 @@ namespace Chapter5
                         $"{person.LastName}, {person.FirstName} button was clicked",
                         "Ok");
         }
+
+        private void MenuItem_Clicked(object sender, EventArgs e)
+        {
+            var menuItem = (MenuItem)sender;
+            var person = (Person)menuItem.CommandParameter;
+
+            DisplayAlert("Menu Item Clicked",
+                        $"{person.LastName}, {person.FirstName} menu was clicked",
+                        "Ok");
+        }
     }
 }

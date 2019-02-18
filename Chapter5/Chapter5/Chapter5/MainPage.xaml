@@ -7,12 +7,16 @@
     <StackLayout>
         <!-- Place new controls here -->
         <ListView x:Name="simpleListView"
-                  Margin="20"
-                  ItemTapped="SimpleListView_ItemTapped"
-                  ItemSelected="SimpleListView_ItemSelected">
+                  Margin="20">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
+                        <ViewCell.ContextActions>
+                            <MenuItem Text="Delete"
+                                      IsDestructive="True"
+                                      Clicked="MenuItem_Clicked"
+                                      CommandParameter="{Binding}" />
+                        </ViewCell.ContextActions>
                         <StackLayout Orientation="Horizontal">
                             <Label Text="{Binding FirstName}" />
                             <Label Text="{Binding LastName}" />
