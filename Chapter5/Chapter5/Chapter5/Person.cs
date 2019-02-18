@@ -8,6 +8,7 @@ namespace Chapter5
     {
         public string FirstName { get; set; }
         public string LastName { get; set; }
+        public Uri Picture { get; set; }
 
         public override string ToString()
         {

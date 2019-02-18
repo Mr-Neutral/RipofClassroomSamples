@@ -12,8 +12,11 @@
                   ItemSelected="SimpleListView_ItemSelected">
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <TextCell Text="{Binding FirstName}"
-                              Detail="{Binding LastName}" />
+                    <ImageCell Text="{Binding FirstName}"
+                               TextColor="Red"
+                               Detail="{Binding LastName}"
+                               DetailColor="Green"
+                               ImageSource="{Binding Picture}" />
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
