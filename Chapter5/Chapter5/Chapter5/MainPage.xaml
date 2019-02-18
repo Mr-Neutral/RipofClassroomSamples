@@ -9,8 +9,14 @@
         <ListView x:Name="simpleListView"
                   Margin="20"
                   ItemTapped="SimpleListView_ItemTapped"
-                  ItemSelected="SimpleListView_ItemSelected"
-                  />
+                  ItemSelected="SimpleListView_ItemSelected">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextCell Text="{Binding FirstName}"
+                              Detail="{Binding LastName}" />
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
         <Button Text="Clear Selection" 
                 Clicked="Button_Clicked" />
     </StackLayout>

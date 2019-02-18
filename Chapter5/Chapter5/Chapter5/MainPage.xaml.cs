@@ -13,20 +13,27 @@ namespace Chapter5
         {
             InitializeComponent();
 
-            List<string> items = new List<string>();
+            List<Person> people = new List<Person>();
 
-            for (int i = 0; i < 100; i++)
-            {
-                items.Add(i.ToString());
-            }
+            var hank = new Person();
+            hank.FirstName = "Hank";
+            hank.LastName = "Hill";
+            people.Add(hank);
 
-            simpleListView.ItemsSource = items;
+            var peggy = new Person();
+            peggy.FirstName = "Peggy";
+            peggy.LastName = "Hill";
+            people.Add(peggy);
+
+            simpleListView.ItemsSource = people;
         }
 
         private void SimpleListView_ItemTapped(object sender, ItemTappedEventArgs e)
         {
+            Person tapped = (Person)e.Item;
+
             DisplayAlert("Item Tapped",
-                        $"{e.Item} was tapped",
+                        $"{tapped.LastName}, {tapped.FirstName} was tapped",
                         "Ok");
         }
 
