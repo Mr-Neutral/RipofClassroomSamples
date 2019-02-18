@@ -12,6 +12,15 @@ namespace Chapter5
         public MainPage()
         {
             InitializeComponent();
+
+            List<string> items = new List<string>();
+
+            for (int i = 0; i < 100; i++)
+            {
+                items.Add(i.ToString());
+            }
+
+            simpleListView.ItemsSource = items;
         }
     }
 }
