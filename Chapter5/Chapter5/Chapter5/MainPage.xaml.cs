@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 
@@ -76,6 +77,15 @@ namespace Chapter5
             DisplayAlert("Menu Item Clicked",
                         $"{person.LastName}, {person.FirstName} menu was clicked",
                         "Ok");
+        }
+
+        private void SimpleListView_Refreshing(object sender, EventArgs e)
+        {
+            // do the logic
+            Thread.Sleep(2000);
+
+            simpleListView.EndRefresh();
+            simpleListView.IsRefreshing = false;
         }
     }
 }
