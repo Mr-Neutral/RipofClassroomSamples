@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,9 +10,12 @@ namespace LoanPayoff
 {
     public partial class MainPage : ContentPage
     {
+        private ObservableCollection<string> paymentScheduleList = new ObservableCollection<string>();
+
         public MainPage()
         {
             InitializeComponent();
+            PaymentSchedule.ItemsSource = paymentScheduleList;
         }
 
         private void Button_Clicked(object sender, EventArgs e)
@@ -34,6 +38,17 @@ namespace LoanPayoff
                             (Math.Pow(1 + convertedRate, months) - 1);
 
             MonthlyPayment.Text = payment.ToString("C");
+
+            this.paymentScheduleList.Clear();
+
+            for (int month = 1; month <= months; month++)
+            {
+                double total = balance * convertedRate + balance;
+                balance = total - payment;
+
+                string display = $"{month}. {balance.ToString("c")}";
+                this.paymentScheduleList.Add(display);
+            }
         }
     }
 }

@@ -26,6 +26,8 @@
 
         <Label x:Name="MonthlyPayment"
                HorizontalOptions="Center" />
+
+        <ListView x:Name="PaymentSchedule" VerticalOptions="FillAndExpand" />
     </StackLayout>
 
 </ContentPage>
