@@ -17,9 +17,16 @@ namespace LoanPayoff
         private void Button_Clicked(object sender, EventArgs e)
         {
             // Get inputs from the UI store as decimal values
-            double balance = double.Parse(Principle.Text);
-            double interestRate = double.Parse(InterestRate.Text);
-            int months = int.Parse(Months.Text);
+            if (!double.TryParse(Principle.Text, out double balance) ||
+                !double.TryParse(InterestRate.Text, out double interestRate) ||
+                !int.TryParse(Months.Text, out int months))
+            {
+                this.DisplayAlert("Invalid Input",
+                    "Please enter numeric values",
+                    "Ok");
+
+                return;
+            }
             
             double convertedRate = interestRate / 100 / 12;
             double payment = balance *
