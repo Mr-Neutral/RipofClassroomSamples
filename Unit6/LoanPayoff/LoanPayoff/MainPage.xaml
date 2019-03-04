@@ -4,11 +4,26 @@
              xmlns:local="clr-namespace:LoanPayoff"
              x:Class="LoanPayoff.MainPage">
 
-    <StackLayout>
-        <!-- Place new controls here -->
-        <Label Text="Welcome to Xamarin.Forms!" 
-           HorizontalOptions="Center"
-           VerticalOptions="CenterAndExpand" />
+    <StackLayout Margin="15">
+        <Label Text="Loan Payoff" 
+           HorizontalOptions="Center" />
+
+        <Entry x:Name="Principle"
+               Placeholder="Principle Balance"
+               Keyboard="Numeric" />
+
+        <Entry x:Name="InterestRate"
+               Placeholder="Interest Rate"
+               Keyboard="Numeric" />
+
+        <Entry x:Name="Months"
+               Placeholder="Months"
+               Keyboard="Numeric" />
+
+        <Button Text="Calculate"
+                HorizontalOptions="Center"
+                Clicked="Button_Clicked" />
+        
     </StackLayout>
 
 </ContentPage>
