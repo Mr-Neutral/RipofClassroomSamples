@@ -23,7 +23,9 @@
         <Button Text="Calculate"
                 HorizontalOptions="Center"
                 Clicked="Button_Clicked" />
-        
+
+        <Label x:Name="MonthlyPayment"
+               HorizontalOptions="Center" />
     </StackLayout>
 
 </ContentPage>
