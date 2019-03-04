@@ -10,7 +10,7 @@ namespace LoanPayoff
 {
     public partial class MainPage : ContentPage
     {
-        private ObservableCollection<string> paymentScheduleList = new ObservableCollection<string>();
+        private ObservableCollection<MonthlyPayment> paymentScheduleList = new ObservableCollection<MonthlyPayment>();
 
         public MainPage()
         {
@@ -50,9 +50,15 @@ namespace LoanPayoff
 
                 double total = monthlyInterest + balance;
                 balance = total - payment;
+                
+                MonthlyPayment paymentDetails = new MonthlyPayment
+                {
+                    Month = month,
+                    Balance = balance.ToString("c"),
+                    Interest = monthlyInterest.ToString("c")
+                };
 
-                string display = $"{month}. {balance.ToString("c")} - {monthlyInterest.ToString("c")}";
-                this.paymentScheduleList.Add(display);
+                this.paymentScheduleList.Add(paymentDetails);
             }
 
             TotalInterest.Text = totalInterest.ToString("c");

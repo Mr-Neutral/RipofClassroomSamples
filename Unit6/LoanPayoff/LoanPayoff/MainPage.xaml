@@ -10,15 +10,18 @@
 
         <Entry x:Name="Principle"
                Placeholder="Principle Balance"
-               Keyboard="Numeric" />
+               Keyboard="Numeric"
+               Text="15000"/>
 
         <Entry x:Name="InterestRate"
                Placeholder="Interest Rate"
-               Keyboard="Numeric" />
+               Keyboard="Numeric"
+               Text="7"/>
 
         <Entry x:Name="Months"
                Placeholder="Months"
-               Keyboard="Numeric" />
+               Keyboard="Numeric"
+               Text="48"/>
 
         <Button Text="Calculate"
                 HorizontalOptions="Center"
@@ -30,7 +33,30 @@
         <Label x:Name="TotalInterest"
                HorizontalOptions="Center" />
 
-        <ListView x:Name="PaymentSchedule" VerticalOptions="FillAndExpand" />
+        <ListView x:Name="PaymentSchedule" VerticalOptions="FillAndExpand">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition />
+                                <ColumnDefinition />
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+                            <Label Grid.Column="0"
+                                   Text="{Binding Month}" />
+                            <Label Grid.Column="1"
+                                   Text="{Binding Balance}" />
+                            <Label Grid.Column="2"
+                                   Text="{Binding Interest}" />
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
     </StackLayout>
 
 </ContentPage>
