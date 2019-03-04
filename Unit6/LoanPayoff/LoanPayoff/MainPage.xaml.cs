@@ -41,14 +41,21 @@ namespace LoanPayoff
 
             this.paymentScheduleList.Clear();
 
+            double totalInterest = 0;
+
             for (int month = 1; month <= months; month++)
             {
-                double total = balance * convertedRate + balance;
+                double monthlyInterest = convertedRate * balance;
+                totalInterest += monthlyInterest;
+
+                double total = monthlyInterest + balance;
                 balance = total - payment;
 
-                string display = $"{month}. {balance.ToString("c")}";
+                string display = $"{month}. {balance.ToString("c")} - {monthlyInterest.ToString("c")}";
                 this.paymentScheduleList.Add(display);
             }
+
+            TotalInterest.Text = totalInterest.ToString("c");
         }
     }
 }
