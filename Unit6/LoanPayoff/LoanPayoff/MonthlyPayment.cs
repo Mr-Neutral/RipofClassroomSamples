@@ -7,7 +7,7 @@ namespace LoanPayoff
     public class MonthlyPayment
     {
         public int Month { get; set; }
-        public string Balance { get; set; }
-        public string Interest { get; set; }
+        public double Balance { get; set; }
+        public double Interest { get; set; }
     }
 }

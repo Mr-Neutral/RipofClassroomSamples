@@ -49,9 +49,9 @@
                             <Label Grid.Column="0"
                                    Text="{Binding Month}" />
                             <Label Grid.Column="1"
-                                   Text="{Binding Balance}" />
+                                   Text="{Binding Balance, StringFormat='Balance: {0:c}'}" />
                             <Label Grid.Column="2"
-                                   Text="{Binding Interest}" />
+                                   Text="{Binding Interest, StringFormat='Interest: {0:c}'}" />
                         </Grid>
                     </ViewCell>
                 </DataTemplate>

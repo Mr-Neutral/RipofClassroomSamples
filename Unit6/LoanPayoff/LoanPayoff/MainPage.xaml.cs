@@ -54,8 +54,8 @@ namespace LoanPayoff
                 MonthlyPayment paymentDetails = new MonthlyPayment
                 {
                     Month = month,
-                    Balance = balance.ToString("c"),
-                    Interest = monthlyInterest.ToString("c")
+                    Balance = balance,
+                    Interest = monthlyInterest
                 };
 
                 this.paymentScheduleList.Add(paymentDetails);
