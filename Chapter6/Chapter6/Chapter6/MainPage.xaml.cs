@@ -16,5 +16,14 @@ namespace Chapter6
             // Turn off nav bar
             //NavigationPage.SetHasNavigationBar(this, false);
         }
+
+        private void Button_Clicked(object sender, EventArgs e)
+        {
+            Page secondPage = new SecondPage();
+            Navigation.PushAsync(secondPage);
+
+            // alternate one liner
+            //Navigation.PushAsync(new SecondPage());
+        }
     }
 }
