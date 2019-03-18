@@ -18,7 +18,8 @@ namespace Chapter6
 		{
 			InitializeComponent ();
             this.pageNumber = pageNumber;
-            pageLabel.Text = "Page " + pageNumber;
+            pageLabel.Text = "Page " + pageNumber + 
+                " App started at " + Singleton.StartupTime.ToLongTimeString();
         }
 
         private void OnGoBackClicked(object sender, EventArgs e)
