@@ -21,6 +21,16 @@
         <Button Text="Choose an Option"
                 HorizontalOptions="Center"
                 Clicked="ChooseOptionClicked" />
+
+        <ListView x:Name="menuListView"
+                  ItemTapped="MenuListView_ItemTapped"
+                  VerticalOptions="EndAndExpand">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextCell Text="{Binding Item}" />
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
     </StackLayout>
 
 </ContentPage>

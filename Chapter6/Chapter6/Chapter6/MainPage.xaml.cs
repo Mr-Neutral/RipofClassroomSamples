@@ -13,6 +13,16 @@ namespace Chapter6
         {
             InitializeComponent();
 
+            var items = new List<MenuItem>
+            {
+                new MenuItem(1, "Pizza", 5),
+                new MenuItem(2, "Burger", 3),
+                new MenuItem(3, "Fries", 2),
+                new MenuItem(4, "Drink", 2)
+            };
+
+            menuListView.ItemsSource = items;
+
             // Turn off nav bar
             //NavigationPage.SetHasNavigationBar(this, false);
         }
@@ -53,6 +63,14 @@ namespace Chapter6
                                                      "Option 3");
 
             await DisplayAlert("You Chose", result, "Ok");
+        }
+
+        private void MenuListView_ItemTapped(object sender, ItemTappedEventArgs e)
+        {
+            MenuItem item = e.Item as MenuItem;
+
+            ItemDetails page = new ItemDetails(item);
+            Navigation.PushAsync(page);
         }
     }
 }
