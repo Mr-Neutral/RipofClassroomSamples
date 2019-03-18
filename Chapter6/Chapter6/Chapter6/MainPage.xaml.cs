@@ -23,6 +23,16 @@ namespace Chapter6
 
             menuListView.ItemsSource = items;
 
+            if (Application.Current.Properties.ContainsKey("lastItem"))
+            {
+                MenuItem lastItem = Application.Current.Properties["lastItem"] as MenuItem;
+
+                if (lastItem != null)
+                {
+                    DisplayAlert("Last Order", lastItem.Item, "Ok");
+                }
+            }
+
             // Turn off nav bar
             //NavigationPage.SetHasNavigationBar(this, false);
         }
@@ -68,6 +78,8 @@ namespace Chapter6
         private void MenuListView_ItemTapped(object sender, ItemTappedEventArgs e)
         {
             MenuItem item = e.Item as MenuItem;
+
+            Application.Current.Properties["lastItem"] = item;
 
             ItemDetails page = new ItemDetails(item);
             Navigation.PushAsync(page);
