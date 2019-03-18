@@ -12,6 +12,9 @@ namespace Chapter6
         public MainPage()
         {
             InitializeComponent();
+
+            // Turn off nav bar
+            //NavigationPage.SetHasNavigationBar(this, false);
         }
     }
 }

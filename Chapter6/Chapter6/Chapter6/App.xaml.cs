@@ -11,7 +11,13 @@ namespace Chapter6
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            //MainPage = new MainPage();
+
+            ContentPage content = new MainPage();
+            MainPage = new NavigationPage(content)
+            {
+                BarBackgroundColor = Color.DeepSkyBlue
+            };
         }
 
         protected override void OnStart()
