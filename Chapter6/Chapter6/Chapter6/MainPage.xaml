@@ -17,6 +17,10 @@
         <Button Text="Ask A Question"
                 HorizontalOptions="Center"
                 Clicked="AskQuestionClicked" />
+
+        <Button Text="Choose an Option"
+                HorizontalOptions="Center"
+                Clicked="ChooseOptionClicked" />
     </StackLayout>
 
 </ContentPage>

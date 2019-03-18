@@ -42,5 +42,17 @@ namespace Chapter6
                 // They clicked no
             }
         }
+
+        private async void ChooseOptionClicked(object sender, EventArgs e)
+        {
+            string result = await DisplayActionSheet("Choose an Option",
+                                                     "Cancel",
+                                                     null, //"Destruction",
+                                                     "Option 1",
+                                                     "Option 2",
+                                                     "Option 3");
+
+            await DisplayAlert("You Chose", result, "Ok");
+        }
     }
 }
