@@ -13,6 +13,10 @@
         <Button Text="Go To Page 2"
                 HorizontalOptions="Center"
                 Clicked="Button_Clicked" />
+
+        <Button Text="Ask A Question"
+                HorizontalOptions="Center"
+                Clicked="AskQuestionClicked" />
     </StackLayout>
 
 </ContentPage>

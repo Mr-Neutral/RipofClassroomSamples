@@ -17,13 +17,30 @@ namespace Chapter6
             //NavigationPage.SetHasNavigationBar(this, false);
         }
 
-        private void Button_Clicked(object sender, EventArgs e)
+        private async void Button_Clicked(object sender, EventArgs e)
         {
             Page secondPage = new SecondPage();
-            Navigation.PushAsync(secondPage);
+            await Navigation.PushAsync(secondPage);
 
             // alternate one liner
             //Navigation.PushAsync(new SecondPage());
+        }
+
+        private async void AskQuestionClicked(object sender, EventArgs e)
+        {
+            bool result = await DisplayAlert("Question",
+                                             "Answer with yes / no",
+                                             "Yes",
+                                             "No");
+
+            if (result)
+            {
+                // They clicked Yes
+            }
+            else
+            {
+                // They clicked no
+            }
         }
     }
 }
