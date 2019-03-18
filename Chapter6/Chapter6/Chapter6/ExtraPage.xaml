@@ -1,20 +1,26 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Chapter6.SecondPage"
-             Title="Second Page">
+             x:Class="Chapter6.ExtraPage"
+             Title="Extra Page">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Second Page"
+            <Label x:Name="pageLabel"
+                Text="Extra Page"
                 HorizontalOptions="Center" />
 
             <Button Text="Go Back"
                 HorizontalOptions="Center"
-                    Clicked="Button_Clicked" />
+                    Clicked="OnGoBackClicked" />
 
             <Button Text="Go Forward"
                 HorizontalOptions="Center"
                     Clicked="GoForwardClick" />
+
+            <Button Text="Go To Beginning"
+                HorizontalOptions="Center"
+                    Clicked="GoToBeginningClick" />           
+            
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

@@ -21,5 +21,11 @@ namespace Chapter6
         {
             Navigation.PopAsync();
         }
+
+        private void GoForwardClick(object sender, EventArgs e)
+        {
+            Page extraPage = new ExtraPage(3);
+            Navigation.PushAsync(extraPage);
+        }
     }
 }
