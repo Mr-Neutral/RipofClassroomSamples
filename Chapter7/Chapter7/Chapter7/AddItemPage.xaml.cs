@@ -1,0 +1,33 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+using Xamarin.Forms;
+using Xamarin.Forms.Xaml;
+
+namespace Chapter7
+{
+	[XamlCompilation(XamlCompilationOptions.Compile)]
+	public partial class AddItemPage : ContentPage
+	{
+        private readonly MainPageViewModel mainPageViewModel;
+        private ItemModel addItemModel;
+
+        public AddItemPage (MainPageViewModel mainPageViewModel)
+		{
+			InitializeComponent ();
+
+            addItemModel = new ItemModel();
+            this.BindingContext = addItemModel;
+            this.mainPageViewModel = mainPageViewModel;
+        }
+
+        private async void OnAddItem(object sender, EventArgs e)
+        {
+            this.mainPageViewModel.Items.Add(this.addItemModel);
+            await Navigation.PopAsync();
+        }
+    }
+}

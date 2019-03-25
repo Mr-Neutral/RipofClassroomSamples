@@ -9,11 +9,13 @@ namespace Chapter7
 {
     public partial class MainPage : ContentPage
     {
+        private MainPageViewModel mainPageViewModel;
+
         public MainPage()
         {
             InitializeComponent();
 
-            var mainPageViewModel = new MainPageViewModel
+            this.mainPageViewModel = new MainPageViewModel
             {
                 Items = new List<ItemModel>
                 {
@@ -23,6 +25,12 @@ namespace Chapter7
             };
 
             this.BindingContext = mainPageViewModel;
+        }
+
+        private async void OnAddItemClicked(object sender, EventArgs e)
+        {
+            var addPage = new AddItemPage(this.mainPageViewModel);
+            await Navigation.PushAsync(addPage);
         }
     }
 }

@@ -6,6 +6,10 @@ namespace Chapter7
 {
     public class ItemModel
     {
+        public ItemModel()
+        {
+        }
+
         public ItemModel(int id, string name, decimal price)
         {
             Id = id;
