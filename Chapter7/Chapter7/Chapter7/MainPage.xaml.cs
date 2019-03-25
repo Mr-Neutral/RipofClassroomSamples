@@ -12,6 +12,17 @@ namespace Chapter7
         public MainPage()
         {
             InitializeComponent();
+
+            var mainPageViewModel = new MainPageViewModel
+            {
+                Items = new List<ItemModel>
+                {
+                    new ItemModel(1, "Pizza", 5),
+                    new ItemModel(2, "Burger", 3)
+                }
+            };
+
+            this.BindingContext = mainPageViewModel;
         }
     }
 }
