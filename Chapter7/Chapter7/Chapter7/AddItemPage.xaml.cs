@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -29,8 +30,13 @@ namespace Chapter7
             this.addItemModel.Id = this.mainPageViewModel.Items.Count + 1;
             this.mainPageViewModel.Items.Add(this.addItemModel);
 
-            // Clear the inputs
-            this.addItemModel = new ItemModel();
+            using (var client = new HttpClient())
+            {
+                await client.PostAsJsonAsync("http://localhost:5000/api/values", this.addItemModel);
+            }
+
+                // Clear the inputs
+                this.addItemModel = new ItemModel();
             this.BindingContext = this.addItemModel;
             this.addItemModel.Name = string.Empty;
             this.addItemModel.Price = 0;

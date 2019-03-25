@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
+using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
@@ -16,15 +17,17 @@ namespace Chapter7
         {
             InitializeComponent();
 
-            this.mainPageViewModel = new MainPageViewModel
+            using (var client = new HttpClient())
             {
-                Items = new ObservableCollection<ItemModel>
-                {
-                    new ItemModel(1, "Pizza", 5),
-                    new ItemModel(2, "Burger", 3)
-                }
-            };
+                var data = client.GetStringAsync("http://localhost:5000/api/values").Result;
+                var list = Newtonsoft.Json.JsonConvert.DeserializeObject<List<ItemModel>>(data);
 
+                this.mainPageViewModel = new MainPageViewModel
+                {
+                    Items = new ObservableCollection<ItemModel>(list)
+                };
+            }
+            
             this.BindingContext = mainPageViewModel;
         }
 
