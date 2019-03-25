@@ -28,7 +28,12 @@ namespace Chapter7
         {
             this.addItemModel.Id = this.mainPageViewModel.Items.Count + 1;
             this.mainPageViewModel.Items.Add(this.addItemModel);
-            await Navigation.PopAsync();
+
+            // Clear the inputs
+            this.addItemModel = new ItemModel();
+            this.BindingContext = this.addItemModel;
+            this.addItemModel.Name = string.Empty;
+            this.addItemModel.Price = 0;
         }
     }
 }
