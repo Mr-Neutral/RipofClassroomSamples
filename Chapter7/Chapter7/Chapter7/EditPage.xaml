@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Chapter7.EditPage">
+    <ContentPage.Content>
+        <StackLayout Margin="15">
+            <Label Text="Edit Item"
+                HorizontalOptions="CenterAndExpand" />
+            <Entry Placeholder="Item Name"
+                   Text="{Binding Path=Name}"/>
+            <Entry Placeholder="Price"
+                   Keyboard="Numeric"
+                   Text="{Binding Path=Price}"/>
+            <Button Text="Edit"
+                    Clicked="OnEditItem" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

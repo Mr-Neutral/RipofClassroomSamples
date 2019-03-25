@@ -33,5 +33,12 @@ namespace Chapter7
             var addPage = new AddItemPage(this.mainPageViewModel);
             await Navigation.PushAsync(addPage);
         }
+
+        private async void ListView_ItemTapped(object sender, ItemTappedEventArgs e)
+        {
+            var item = e.Item as ItemModel;
+            var editPage = new EditPage(item);
+            await Navigation.PushAsync(editPage);
+        }
     }
 }

@@ -9,7 +9,8 @@
                HorizontalOptions="CenterAndExpand" />
         <Button Text="Add Item"
                 Clicked="OnAddItemClicked" />
-        <ListView ItemsSource="{Binding Path=Items}">
+        <ListView ItemsSource="{Binding Path=Items}"
+                  ItemTapped="ListView_ItemTapped">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <TextCell Text="{Binding Path=Name}"
