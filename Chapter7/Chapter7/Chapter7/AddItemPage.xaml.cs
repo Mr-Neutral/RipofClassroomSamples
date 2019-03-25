@@ -26,6 +26,7 @@ namespace Chapter7
 
         private async void OnAddItem(object sender, EventArgs e)
         {
+            this.addItemModel.Id = this.mainPageViewModel.Items.Count + 1;
             this.mainPageViewModel.Items.Add(this.addItemModel);
             await Navigation.PopAsync();
         }

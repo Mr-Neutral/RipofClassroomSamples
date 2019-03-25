@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,7 +18,7 @@ namespace Chapter7
 
             this.mainPageViewModel = new MainPageViewModel
             {
-                Items = new List<ItemModel>
+                Items = new ObservableCollection<ItemModel>
                 {
                     new ItemModel(1, "Pizza", 5),
                     new ItemModel(2, "Burger", 3)
