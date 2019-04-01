@@ -21,7 +21,10 @@ namespace Chapter7Database
 
         private void OnSaveClicked(object sender, EventArgs e)
         {
+            App.Database.Insert(person);
 
+            this.person = new PersonModel();
+            this.BindingContext = this.person;
         }
     }
 }
