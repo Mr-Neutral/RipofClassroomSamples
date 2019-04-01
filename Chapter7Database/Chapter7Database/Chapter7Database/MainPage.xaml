@@ -15,5 +15,9 @@
 
         <Button Text="Save"
                 Clicked="OnSaveClicked" />
+
+        <Button Text="Delete"
+                BackgroundColor="Red"
+                Clicked="OnDeleteClicked" />
     </StackLayout>
 </ContentPage>

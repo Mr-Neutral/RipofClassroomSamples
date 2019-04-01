@@ -29,5 +29,10 @@ namespace Chapter7Database
             this.person = new PersonModel();
             this.BindingContext = this.person;
         }
+
+        private void OnDeleteClicked(object sender, EventArgs e)
+        {
+            App.Database.Delete(person);
+        }
     }
 }
