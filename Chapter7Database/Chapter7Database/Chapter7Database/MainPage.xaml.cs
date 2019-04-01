@@ -15,7 +15,10 @@ namespace Chapter7Database
         {
             InitializeComponent();
 
-            this.person = new PersonModel();
+            //this.person = new PersonModel();
+
+            this.person = App.Database.Get<PersonModel>(1);
+
             this.BindingContext = this.person;
         }
 
