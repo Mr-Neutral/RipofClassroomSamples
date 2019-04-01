@@ -17,16 +17,23 @@ namespace Chapter7
         {
             InitializeComponent();
 
-            using (var client = new HttpClient())
-            {
-                var data = client.GetStringAsync("http://localhost:5000/api/values").Result;
-                var list = Newtonsoft.Json.JsonConvert.DeserializeObject<List<ItemModel>>(data);
+            //using (var client = new HttpClient())
+            //{
+            //    var data = client.GetStringAsync("http://localhost:5000/api/values").Result;
+            //    var list = Newtonsoft.Json.JsonConvert.DeserializeObject<List<ItemModel>>(data);
 
-                this.mainPageViewModel = new MainPageViewModel
-                {
-                    Items = new ObservableCollection<ItemModel>(list)
-                };
-            }
+            //    this.mainPageViewModel = new MainPageViewModel
+            //    {
+            //        Items = new ObservableCollection<ItemModel>(list)
+            //    };
+            //}
+
+            var list = App.Database.Table<ItemModel>().ToList();
+
+            this.mainPageViewModel = new MainPageViewModel
+            {
+                Items = new ObservableCollection<ItemModel>(list)
+            };
             
             this.BindingContext = mainPageViewModel;
         }

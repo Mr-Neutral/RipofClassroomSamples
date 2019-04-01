@@ -28,6 +28,9 @@ namespace Chapter7
         {
             this.item.Name = this.editPageValue.Name;
             this.item.Price = this.editPageValue.Price;
+
+            App.Database.Update(this.item);
+
             await Navigation.PopAsync();
         }
     }

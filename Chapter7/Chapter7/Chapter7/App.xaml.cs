@@ -1,4 +1,6 @@
-﻿using System;
+﻿using SQLite;
+using System;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -7,9 +9,18 @@ namespace Chapter7
 {
     public partial class App : Application
     {
+        public static SQLiteConnection Database;
+
         public App()
         {
             InitializeComponent();
+
+            string filePath = System.IO.Path.Combine(FileSystem.AppDataDirectory,
+                                                     "chapter7.demo");
+
+            Database = new SQLiteConnection(filePath);
+
+            Database.CreateTable<ItemModel>();
 
             MainPage = new NavigationPage(new MainPage());
         }

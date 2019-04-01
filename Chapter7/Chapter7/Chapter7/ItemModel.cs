@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SQLite;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
@@ -23,6 +24,8 @@ namespace Chapter7
             Price = price;
         }
 
+        [PrimaryKey]
+        [AutoIncrement]
         public int Id
         {
             get => _id; set

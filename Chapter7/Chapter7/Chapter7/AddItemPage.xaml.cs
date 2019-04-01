@@ -27,16 +27,17 @@ namespace Chapter7
 
         private async void OnAddItem(object sender, EventArgs e)
         {
-            this.addItemModel.Id = this.mainPageViewModel.Items.Count + 1;
             this.mainPageViewModel.Items.Add(this.addItemModel);
 
-            using (var client = new HttpClient())
-            {
-                await client.PostAsJsonAsync("http://localhost:5000/api/values", this.addItemModel);
-            }
+            //using (var client = new HttpClient())
+            //{
+            //    await client.PostAsJsonAsync("http://localhost:5000/api/values", this.addItemModel);
+            //}
+
+            App.Database.Insert(this.addItemModel);
 
                 // Clear the inputs
-                this.addItemModel = new ItemModel();
+            this.addItemModel = new ItemModel();
             this.BindingContext = this.addItemModel;
             this.addItemModel.Name = string.Empty;
             this.addItemModel.Price = 0;
