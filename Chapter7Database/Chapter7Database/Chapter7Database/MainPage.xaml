@@ -4,11 +4,16 @@
              xmlns:local="clr-namespace:Chapter7Database"
              x:Class="Chapter7Database.MainPage">
 
-    <StackLayout>
+    <StackLayout Margin="15">
         <!-- Place new controls here -->
-        <Label Text="Welcome to Xamarin.Forms!" 
-           HorizontalOptions="Center"
-           VerticalOptions="CenterAndExpand" />
-    </StackLayout>
+        <Label Text="Entry Form" 
+           HorizontalOptions="Center" />
 
+        <Entry Text="{Binding Path=Name}" />
+
+        <Entry Text="{Binding Path=LuckyNumber}" />
+
+        <Button Text="Save"
+                Clicked="OnSaveClicked" />
+    </StackLayout>
 </ContentPage>

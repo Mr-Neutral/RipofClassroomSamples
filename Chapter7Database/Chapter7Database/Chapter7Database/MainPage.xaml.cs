@@ -9,9 +9,19 @@ namespace Chapter7Database
 {
     public partial class MainPage : ContentPage
     {
+        private PersonModel person;
+
         public MainPage()
         {
             InitializeComponent();
+
+            this.person = new PersonModel();
+            this.BindingContext = this.person;
+        }
+
+        private void OnSaveClicked(object sender, EventArgs e)
+        {
+
         }
     }
 }
