@@ -4,18 +4,16 @@
              xmlns:local="clr-namespace:Chapter8"
              x:Class="Chapter8.MainPage">
 
-    <StackLayout>
+    <StackLayout Spacing="10">
         <!-- Place new controls here -->
         <local:CustomLabel Text="Welcome to Xamarin.Forms!" 
            HorizontalOptions="Center"
            VerticalOptions="CenterAndExpand" />
-        <local:CustomLabel Text="Label 2" 
-           HorizontalOptions="Center"
-                           BackgroundColor="Green"
-           VerticalOptions="CenterAndExpand" />
-        <local:CustomLabel Text="Last label!" 
-           HorizontalOptions="Center"
-           VerticalOptions="CenterAndExpand" />
+        <local:CustomButton Counter="3" />
+        <local:CustomButton />
+        <local:CustomButton Counter="7" />
+        <local:CustomButton />
+        <local:CustomButton />
     </StackLayout>
 
 </ContentPage>
