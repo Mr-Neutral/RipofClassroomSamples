@@ -12,6 +12,9 @@ namespace Chapter9
         public MainPage()
         {
             InitializeComponent();
+            
+            IHelloWorld helloWorld = DependencyService.Get<IHelloWorld>();
+            helloLabel.Text = helloWorld.HelloWorld();
         }
     }
 }
