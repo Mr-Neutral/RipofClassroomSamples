@@ -5,3 +5,5 @@ This repository will be updated weekly as I go thru demos during class.  I'll pu
 As always, feel free to reference the book's sample code using the author's GitHub repository for the book located at https://github.com/danhermes/xamarin-book-examples
 
 Midterm exam is 2/28/2019
+
+Original link: https://github.com/UC2019-Spring-Main-ITSS338/classroom-samples
